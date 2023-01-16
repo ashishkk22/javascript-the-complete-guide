@@ -1,16 +1,17 @@
 const cart = ["watch", "shirt", "jeans"];
 
-const promise = createOrder(cart); //orderID
-
-promise
+createOrder(cart)
   .then(function (orderId) {
     //   proceedToPayment(orderId);
     console.log("in the then after promise", orderId);
   })
+  .then(function () {
+    return proceedToPayment(orderId);
+  })
   .catch(function (err) {
     console.log(err.message);
   });
-
+//here we have to return to escape the errors
 //
 function createOrder(cart) {
   const pr = new Promise(function (resolve, reject) {
@@ -26,6 +27,14 @@ function createOrder(cart) {
   });
   return pr;
 }
+
+function proceedToPayment(orderId) {
+  const pr = new Promise(function (resolve, reject) {
+    resolve("Payment Successful");
+  });
+  return pr;
+}
+
 function validateCart(cart) {
   return false;
 }
