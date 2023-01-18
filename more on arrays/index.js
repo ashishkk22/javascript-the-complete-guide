@@ -66,6 +66,60 @@ console.log(testResults.lastIndexOf(1.5)); //from the last
 
 const personData2 = [{ name: "ashish" }, { name: "mayank" }];
 const manuel = personData2.find((person, idx, persons) => {
+  //return the full object from the persondata
   return person.name === "mayank";
 });
 console.log(manuel, "manuel");
+
+const indexOfPerson = personData2.findIndex((person, idx, persons) => {
+  //return the index of the data
+  return person.name === "mayank";
+});
+
+//includes or not
+const includeOrNot = testResults.includes(22); //gives the output tha 22 is present or not
+
+personData2.forEach((person, idx, persons) => {
+  //here we will get index also in for in for of we dont get
+});
+
+//to get the new data we can do like this
+const newPersonData = personData.map((person, idx, persons) => {
+  return { newData: person.name };
+});
+
+const sortedArray = prices.sort((a, b) => {
+  return a > b;
+});
+
+//to reverse we can do like this
+prices.reverse();
+
+const filterArray = prices.filter((price, index, prices) => {
+  return price != 10;
+});
+
+const reduceMethod = prices.reduce((prevValue, curValue, curIndex, prices) => {
+  return prevValue + curValue;
+}, 0);
+
+let { total, quantity } = state.cart.reduce(
+  (cartTotal, item) => {
+    const { price, qty } = item;
+    const itemTotal = price * qty;
+    cartTotal.total += itemTotal;
+    cartTotal.quantity += qty;
+    return cartTotal;
+  },
+  {
+    total: 0,
+    quantity: 0,
+  }
+);
+
+const data = "new york; 10.99; 2000";
+const transformedData = data.split(";");
+console.log(transformedData); //so here we will get the new array with the three value.
+
+const akk = ["ashish", "kachhadiya"];
+console.log(akk.join(" and ")); //output: ashish and kachhadiya
