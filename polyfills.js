@@ -119,7 +119,12 @@ console.log(sum);
 
 Array.prototype.myPolyFillReduce = function (callback, initialValue) {
   let arr = this;
-  let newValue = initialValue;
+  let newValue;
+  if (initialValue !== undefined) {
+    newValue = initialValue;
+  } else {
+    newValue = arr[0];
+  }
   for (let i = 0; i < arr.length; i++) {
     newValue = callback(newValue, arr[i], i, arr);
   }
