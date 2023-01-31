@@ -87,7 +87,7 @@ let newArr = arrForMap.myPolyfillMap((value, index, arr) => {
 });
 // console.log(newArr);
 
-//=============PolyFill of Map==================//
+//=============PolyFill of filter==================//
 
 let arrForFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let newArrWithFilter = arrForFilter.filter(
@@ -109,7 +109,7 @@ let newArrWithCustomFilter = arrForFilter.myPolyFillFilter(
 );
 console.log(newArrWithCustomFilter);
 
-//=============Polyfill of reduce=================
+//=============Polyfill of reduce=================//
 let initialValue = 0;
 let arrForReduce = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let sum = arrForReduce.reduce((prev, curr, idx, arr) => {
