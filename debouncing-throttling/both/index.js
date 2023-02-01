@@ -22,6 +22,7 @@ const myDebounce = (cb, d) => {
   };
 };
 
+//throttle polyfill implementation
 const myThrottle = (cb, d) => {
   let last = 0;
   return function (...args) {
