@@ -59,17 +59,6 @@ var obj3 = {
 obj3.display();
 //can we add method in the function like we do in object without prototype
 //function as argument pass receive return
-function Ak(n, p) {
-  this.n = n;
-  this.p = p;
-}
-let object = new Ak(2, 2);
-Ak.myMethod = function () {
-  console.log(this.n, this.p);
-};
-console.log(object.myMethod); //
-console.log(Ak); //
-console.log(Ak); //
 
 let Ak2 = {
   n: "p",
